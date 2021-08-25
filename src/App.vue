@@ -26,7 +26,6 @@
         <input
           type="number"
           required
-          pattern="[0-9]"
           class="form-control"
           id="edad"
           v-model="record.edad"
@@ -110,13 +109,6 @@
 </template>
 
 <script>
-function initState() {
-  return {
-    record: { color: 'Rojo' },
-
-    records: [],
-  };
-}
 export default {
   data: () => ({
     record: { color: 'Rojo' },
@@ -157,6 +149,14 @@ export default {
           showConfirmButton: false,
           timer: 1500,
         });
+        return;
+      } else if (this.record.edad < 1 || this.record.edad > 100) {
+        this.$swal.fire({
+          position: 'center',
+          icon: 'warning',
+          title: 'La edad tiene que estar entre 1 y 100 años ',
+        });
+
         return;
       }
 
