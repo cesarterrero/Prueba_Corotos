@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "serve": "vite serve",
+    "build": "vite build",
     "deploy": "sh deploy.sh"
   },
   "dependencies": {
